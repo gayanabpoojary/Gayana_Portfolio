@@ -143,25 +143,58 @@ const Header = () => {
 const ProfileImage = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.85 }}
+      initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
-      className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80"
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="
+        relative
+        w-56 h-56
+        sm:w-64 sm:h-64
+        lg:w-80 lg:h-80
+        select-none
+      "
     >
-      {/* Rings */}
-      <div className="absolute inset-0 rounded-full border border-primary/20 animate-glow" />
-      <div className="absolute inset-6 rounded-full border border-primary/10" />
-      <div className="absolute inset-10 rounded-full border border-border/50" />
+      {/* Subtle floating animation */}
+      <motion.div
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute inset-0"
+      >
+        {/* Rings */}
+        <div className="absolute inset-0 rounded-full border border-primary/20 animate-glow" />
+        <div className="absolute inset-6 rounded-full border border-primary/10" />
+        <div className="absolute inset-10 rounded-full border border-border/50" />
 
-      {/* Image */}
-      <div className="absolute inset-10 rounded-full bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl overflow-hidden">
-        <img
-          src={`${import.meta.env.BASE_URL}G.jpg`}
-          alt="Gayana Poojary"
-          className="w-full h-full object-cover select-none"
-          draggable={false}
-        />
-      </div>
+        {/* Image wrapper */}
+        <div
+          className="
+            absolute inset-10
+            rounded-full
+            bg-gradient-to-br from-secondary to-background
+            border-2 border-primary/30
+            shadow-2xl
+            overflow-hidden
+            pointer-events-none
+          "
+        >
+          <img
+            src={`${import.meta.env.BASE_URL}G.jpg`}
+            alt="Gayana Poojary"
+            className="
+              w-full h-full
+              object-cover
+              select-none
+              pointer-events-none
+              transition-transform duration-300
+              hover:scale-[1.03]
+            "
+            draggable={false}
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
+            onKeyDown={(e) => e.preventDefault()}
+          />
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
