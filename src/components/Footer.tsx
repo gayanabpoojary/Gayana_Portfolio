@@ -38,7 +38,7 @@ const Footer = () => {
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           <a
-  href="/Resume/Gayana_Poojary_Resume.pdf"
+  href="/finance-portfolio-builder/Resume/Gayana_Poojary_Resume.pdf"
   download
   target="_blank"
   rel="noopener noreferrer"

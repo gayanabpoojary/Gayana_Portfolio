@@ -79,7 +79,7 @@ const Header = () => {
               className="flex flex-wrap gap-4"
             >
               <a
-  href="/Resume/Gayana_Poojary_Resume.pdf"
+  href="/finance-portfolio-builder/Resume/Gayana_Poojary_Resume.pdf"
   download
   target="_blank"
   rel="noopener noreferrer"
