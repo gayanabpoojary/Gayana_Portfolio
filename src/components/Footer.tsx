@@ -38,19 +38,16 @@ const Footer = () => {
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
           <a
-  href="/finance-portfolio-builder/Resume/Gayana_Poojary_Resume.pdf"
+  href={`${import.meta.env.BASE_URL}Resume/Gayana_Poojary_Resume.pdf`}
   download
   target="_blank"
   rel="noopener noreferrer"
 >
-  <Button
-    size="lg"
-    className="premium-button bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
-  >
-    <Download className="h-4 w-4 mr-2" />
+  <button className="premium-button bg-primary text-primary-foreground rounded-full px-8 py-3">
     Download Resume
-  </Button>
+  </button>
 </a>
+
            <a
     href="mailto:gayanabpoojary@gmail.com?subject=Opportunity%20Discussion&body=Hi%20Gayana,%0D%0A%0D%0AI%20came%20across%20your%20profile%20and%20would%20like%20to%20connect.%0D%0A%0D%0ARegards,"
     aria-label="Send email to Gayana Poojary"

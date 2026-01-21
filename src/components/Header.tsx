@@ -78,20 +78,17 @@ const Header = () => {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <a
-  href="/finance-portfolio-builder/Resume/Gayana_Poojary_Resume.pdf"
+    <a
+  href={`${import.meta.env.BASE_URL}Resume/Gayana_Poojary_Resume.pdf`}
   download
   target="_blank"
   rel="noopener noreferrer"
 >
-  <Button
-    size="lg"
-    className="premium-button bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
-  >
-    <Download className="h-4 w-4 mr-2" />
+  <button className="premium-button bg-primary text-primary-foreground rounded-full px-8 py-3">
     Download Resume
-  </Button>
+  </button>
 </a>
+
               <Button
                 variant="outline"
                 size="lg"
