@@ -13,7 +13,7 @@ const Header = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="order-1 lg:order-2 flex justify-center">
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -105,8 +105,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative flex items-center justify-center"
-
+            className="relative hidden lg:flex items-center justify-center"
           >
             <div className="relative">
               {/* Decorative rings */}
