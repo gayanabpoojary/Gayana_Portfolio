@@ -106,8 +106,7 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative flex items-center justify-center"
-
+            className="relative hidden lg:flex items-center justify-center"
           >
             <div className="relative">
               {/* Decorative rings */}
