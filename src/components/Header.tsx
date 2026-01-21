@@ -13,13 +13,14 @@ const Header = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="order-2 lg:order-1"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -106,29 +107,22 @@ const Header = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8, ease: "easeOut" }}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center order-1 lg:order-2 mb-8 lg:mb-0"
           >
-            <div className="relative w-full flex justify-center">
-              {/* Decorative rings */}
-              <div className="absolute inset-0 w-48 h-48 md:w-80 md:h-80 rounded-full border border-primary/20 animate-glow -z-10" />
-              <div className="absolute inset-2 md:inset-4 w-44 h-44 md:w-72 md:h-72 rounded-full border border-primary/10 -z-10" />
-              <div className="absolute inset-4 md:inset-8 w-40 h-40 md:w-64 md:h-64 rounded-full border border-border/50 -z-10" />
+            <div className="relative w-full flex justify-center min-h-[280px] sm:min-h-[320px] lg:min-h-[400px]">
+              {/* Decorative rings - behind everything */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border border-primary/20 animate-glow" style={{ zIndex: 1 }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-52 h-52 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full border border-primary/10" style={{ zIndex: 1 }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border border-border/50" style={{ zIndex: 1 }} />
               
               {/* Profile photo with glass effect */}
-              <div className="relative w-40 h-40 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl m-4 md:m-8">
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl" style={{ zIndex: 2 }}>
                 <img
                   src={`${import.meta.env.BASE_URL}G.jpg`}
                   alt="Gayana Poojary"
-                  className="
-                    absolute inset-0
-                    w-full h-full
-                    object-cover
-                    rounded-full
-                    z-10
-                    pointer-events-none
-                    select-none
-                  "
+                  className="w-full h-full object-cover rounded-full"
                   draggable={false}
+                  style={{ zIndex: 2 }}
                 />
 
                 {/* Fallback content */}
@@ -140,12 +134,13 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Floating badges */}
+              {/* Floating badges - on top */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -right-2 md:-right-4 top-1/4 glass-card px-3 py-2 md:px-4 shadow-xl z-20"
+                className="absolute right-0 sm:right-4 lg:-right-4 top-8 sm:top-12 lg:top-1/4 glass-card px-3 py-2 sm:px-4 shadow-xl"
+                style={{ zIndex: 10 }}
               >
                 <div className="text-xs text-muted-foreground">MBA Finance</div>
                 <div className="text-sm font-semibold text-foreground">CGPA 7.48</div>
@@ -155,9 +150,10 @@ const Header = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
-                className="absolute -left-2 md:-left-8 bottom-1/4 glass-card px-3 py-2 md:px-4 shadow-xl z-20"
+                className="absolute left-0 sm:left-4 lg:-left-8 bottom-8 sm:bottom-12 lg:bottom-1/4 glass-card px-3 py-2 sm:px-4 shadow-xl"
+                style={{ zIndex: 10 }}
               >
-                <div className="text-xs text-muted-foreground">Expertice in</div>
+                <div className="text-xs text-muted-foreground">Expertise in</div>
                 <div className="text-sm font-semibold text-primary">Finance & Accounting</div>
               </motion.div>
             </div>
