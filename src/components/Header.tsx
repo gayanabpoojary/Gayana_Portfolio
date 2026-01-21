@@ -13,39 +13,58 @@ const Header = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start lg:items-center">
 
-          {/* LEFT COLUMN (TEXT) */}
+          {/* TEXT COLUMN */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
             className="order-1"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 border border-border/50 text-sm text-muted-foreground mb-8"
+            >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Available for opportunities
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
+            >
               <span className="block text-foreground">Gayana</span>
               <span className="gold-text">Poojary</span>
-            </h1>
+            </motion.h1>
 
-            <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-lg">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-lg"
+            >
               Finance Professional focused on{" "}
               <span className="text-foreground font-medium">accuracy</span>,{" "}
               <span className="text-foreground font-medium">compliance</span>, and{" "}
               <span className="text-foreground font-medium">insight</span>.
-            </p>
+            </motion.p>
 
-            {/* IMAGE FOR MOBILE (AFTER NAME & TAGLINE) */}
-            <div className="flex justify-center mb-10 lg:hidden">
+            {/* IMAGE ON MOBILE (AFTER NAME & TAGLINE) */}
+            <div className="lg:hidden flex justify-center mb-12">
               <ProfileImage />
             </div>
 
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-10"
+            >
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
                 Bengaluru, India
@@ -58,9 +77,14 @@ const Header = () => {
                 <Mail className="h-4 w-4 text-primary" />
                 gayanabpoojary@gmail.com
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.75 }}
+              className="flex flex-wrap gap-4"
+            >
               <a
                 href={`${import.meta.env.BASE_URL}Resume/Gayana_Poojary_Resume.pdf`}
                 download
@@ -84,11 +108,11 @@ const Header = () => {
               >
                 View Experience
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
 
-          {/* RIGHT COLUMN (IMAGE – DESKTOP ONLY) */}
-          <div className="order-2 hidden lg:flex justify-center">
+          {/* IMAGE COLUMN (DESKTOP ONLY) */}
+          <div className="hidden lg:flex justify-center order-2">
             <ProfileImage />
           </div>
         </div>
@@ -98,7 +122,7 @@ const Header = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 1.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
@@ -114,13 +138,13 @@ const Header = () => {
   );
 };
 
-/* 🔒 ISOLATED IMAGE COMPONENT (prevents layout bugs) */
+/* IMAGE COMPONENT — ANIMATION SAFE */
 const ProfileImage = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.85 }}
       animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.9, ease: "easeOut" }}
       className="relative w-64 h-64"
     >
       {/* Rings */}
