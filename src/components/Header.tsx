@@ -114,19 +114,22 @@ const Header = () => {
               <div className="absolute inset-8 w-64 h-64 rounded-full border border-border/50" />
               
               {/* Profile photo with glass effect */}
-              <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl animate-float m-8">
-                <img 
-                  src={`${import.meta.env.BASE_URL}G.jpg`} 
-                  alt="Gayana Poojary" 
-                  className="w-full h-full object-cover pointer-events-none select-none"
-                  onContextMenu={(e) => e.preventDefault()}
-                  onDragStart={(e) => e.preventDefault()}
-                  onError={(e) => {
-                    // Fallback to initials if image fails to load
-                    e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
+              <div className="relative w-64 h-64 rounded-full bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl m-8">
+                <img
+  src={`${import.meta.env.BASE_URL}G.jpg`}
+  alt="Gayana Poojary"
+  className="
+    absolute inset-0
+    w-full h-full
+    object-cover
+    rounded-full
+    z-30
+    pointer-events-none
+    select-none
+  "
+  draggable={false}
+/>
+
                 {/* Fallback content */}
                 <div className="absolute inset-0 flex items-center justify-center hidden">
                   <div className="text-center">
