@@ -116,7 +116,7 @@ const Header = () => {
               {/* Profile photo with glass effect */}
               <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl animate-float m-8">
                 <img 
-                  src="/G.jpg" 
+                  src={`${import.meta.env.BASE_URL}G.jpg`} 
                   alt="Gayana Poojary" 
                   className="w-full h-full object-cover pointer-events-none select-none"
                   onContextMenu={(e) => e.preventDefault()}
