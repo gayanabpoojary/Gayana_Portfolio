@@ -17,10 +17,10 @@ const App = () => (
 
       <HashRouter>
         <Routes>
-          {/* HOME */}
-          <Route index element={<Index />} />
+          {/* ✅ HOME ROUTE (THIS WAS THE REAL FIX) */}
+          <Route path="/" element={<Index />} />
 
-          {/* 404 */}
+          {/* ✅ 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
