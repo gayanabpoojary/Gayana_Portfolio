@@ -64,11 +64,11 @@ const Header = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>+918147499741</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>gayana.poojary@email.com</span>
+                <span>gayanabpoojary@gmail.com</span>
               </div>
             </motion.div>
 
@@ -78,13 +78,20 @@ const Header = () => {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="flex flex-wrap gap-4"
             >
-              <Button
-                size="lg"
-                className="premium-button bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Download Resume
-              </Button>
+              <a
+  href="/Resume/Gayana_Poojary_Resume.pdf"
+  download
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="lg"
+    className="premium-button bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8"
+  >
+    <Download className="h-4 w-4 mr-2" />
+    Download Resume
+  </Button>
+</a>
               <Button
                 variant="outline"
                 size="lg"
@@ -109,9 +116,22 @@ const Header = () => {
               <div className="absolute inset-4 w-72 h-72 rounded-full border border-primary/10" />
               <div className="absolute inset-8 w-64 h-64 rounded-full border border-border/50" />
               
-              {/* Photo placeholder with glass effect */}
+              {/* Profile photo with glass effect */}
               <div className="relative w-64 h-64 rounded-full overflow-hidden bg-gradient-to-br from-secondary to-background border-2 border-primary/30 shadow-2xl animate-float m-8">
-                <div className="absolute inset-0 flex items-center justify-center">
+                <img 
+                  src="/G.jpg" 
+                  alt="Gayana Poojary" 
+                  className="w-full h-full object-cover pointer-events-none select-none"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
+                  onError={(e) => {
+                    // Fallback to initials if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+                {/* Fallback content */}
+                <div className="absolute inset-0 flex items-center justify-center hidden">
                   <div className="text-center">
                     <div className="text-6xl font-bold gold-text mb-2">GP</div>
                     <div className="text-xs text-muted-foreground uppercase tracking-widest">Finance Executive</div>
@@ -127,7 +147,7 @@ const Header = () => {
                 className="absolute -right-4 top-1/4 glass-card px-4 py-2 shadow-xl"
               >
                 <div className="text-xs text-muted-foreground">MBA Finance</div>
-                <div className="text-sm font-semibold text-foreground">CGPA 7.41</div>
+                <div className="text-sm font-semibold text-foreground">CGPA 7.48</div>
               </motion.div>
 
               <motion.div
@@ -136,8 +156,9 @@ const Header = () => {
                 transition={{ delay: 1.2, duration: 0.5 }}
                 className="absolute -left-8 bottom-1/4 glass-card px-4 py-2 shadow-xl"
               >
-                <div className="text-xs text-muted-foreground">Experience</div>
-                <div className="text-sm font-semibold text-primary">Finance Ops</div>
+                <div className="text-xs text-muted-foreground">Expertice in</div>
+                <div className="text-sm font-semibold text-primary">Finance & Accounting 
+</div>
               </motion.div>
             </div>
           </motion.div>
