@@ -48,10 +48,10 @@ const Header = () => {
               transition={{ delay: 0.45 }}
               className="text-xl md:text-2xl text-muted-foreground font-light mb-8 max-w-lg"
             >
-              Finance Professional focused on{" "}
-              <span className="text-foreground font-medium">accuracy</span>,{" "}
-              <span className="text-foreground font-medium">compliance</span>, and{" "}
-              <span className="text-foreground font-medium">insight</span>.
+              Finance Graduate{" "}
+              <span className="text-foreground font-medium">Worked on GST Filings</span>,{" "}
+              <span className="text-foreground font-medium">Invoice Reconciliation & Prepared MIS Reports</span>, and{" "}
+              <span className="text-foreground font-medium">Hands-On Accounting Exposure</span>.
             </motion.p>
 
             {/* IMAGE ON MOBILE (AFTER NAME & TAGLINE) */}
